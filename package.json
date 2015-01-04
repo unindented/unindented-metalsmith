@@ -1,0 +1,45 @@
+{
+  "name": "unindented-metalsmith",
+  "description": "My website, built using Metalsmith.",
+  "license": "MIT",
+  "private": true,
+  "author": {
+    "name": "Daniel Perez Alvarez",
+    "email": "unindented@gmail.com",
+    "url": "http://unindented.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/unindented/unindented-metalsmith.git"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "npm run lint && npm run build",
+    "build": "node index.js build",
+    "serve": "node index.js serve",
+    "watch": "node index.js watch",
+    "icons": "node index.js icons",
+    "sync": "CONFIG=sync node index.js build && CONFIG=sync node index.js sync",
+    "sync-prod": "CONFIG=sync-prod node index.js build && CONFIG=sync-prod node index.js sync"
+  },
+  "dependencies": {
+    "async": "^2.1.1",
+    "babelify": "^7.3.0",
+    "debug": "^2.2.0",
+    "js-yaml": "^3.6.1",
+    "lodash": "^4.16.4",
+    "metalsmith-bundle": "^2.0.9",
+    "minimist": "^1.2.0",
+    "normalize.css": "^5.0.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.0.0",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-stage-1": "^6.16.0",
+    "babel-register": "^6.16.3",
+    "eslint": "^3.8.0",
+    "eslint-config-standard": "^6.2.0",
+    "eslint-plugin-promise": "^3.0.0",
+    "eslint-plugin-standard": "^2.0.1"
+  }
+}

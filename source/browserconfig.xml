@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+  <msapplication>
+    <tile>
+      <square70x70logo src="ms-touch-icon-128x128.png" />
+      <square150x150logo src="ms-touch-icon-270x270.png" />
+      <square310x310logo src="ms-touch-icon-558x558.png" />
+      <wide310x150logo src="ms-touch-icon-558x558.png"/>
+    </tile>
+    <notification>
+      <polling-uri src="/feed.tile" />
+      <frequency>360</frequency>
+      <cycle>1</cycle>
+    </notification>
+  </msapplication>
+</browserconfig>

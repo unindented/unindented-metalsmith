@@ -1,0 +1,290 @@
+@import "_settings.css";
+
+/*
+ * Layout
+ * -------------------------------------------------- */
+
+:root {
+
+  --max-width:                   40rem;
+  --header-spacing:              15%;
+  --footer-spacing:              5%;
+
+  --body-spacing-screen-xs:      var(--line-height-computed);
+  --body-spacing-screen-sm:      calc(var(--line-height-computed) * 2);
+  --body-spacing-screen-md:      calc(var(--line-height-computed) * 3);
+  --body-spacing-screen-lg:      calc(var(--line-height-computed) * 3);
+  --body-spacing-screen-xl:      calc(var(--line-height-computed) * 3);
+
+  --column-count-screen-xs:      1;
+  --column-count-screen-sm:      2;
+  --column-count-screen-md:      2;
+  --column-count-screen-lg:      3;
+  --column-count-screen-xl:      3;
+
+}
+
+
+/* Header and footer
+ * ------------------------- */
+
+body > header,
+body > footer {
+  text-align: center;
+}
+body > header:before,
+body > footer:before,
+body > header:after,
+body > footer:after {
+  display: table;
+  content: " ";
+}
+body > header:after,
+body > footer:after {
+  clear: both;
+}
+
+body > header a,
+body > footer a {
+  white-space: nowrap;
+  border: 0;
+}
+
+body > header .nav,
+body > footer .nav,
+body > footer .meta {
+  margin: var(--line-height-computed) auto;
+}
+body > header .nav:before,
+body > footer .nav:before,
+body > footer .meta:before,
+body > header .nav:after,
+body > footer .nav:after,
+body > footer .meta:after {
+  display: table;
+  content: " ";
+}
+body > header .nav:after,
+body > footer .nav:after,
+body > footer .meta:after {
+  clear: both;
+}
+body > header .nav .menu,
+body > footer .nav .menu {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+body > header {
+  padding-bottom: var(--header-spacing);
+}
+body > header .logo {
+  display: none;
+}
+body > header .nav {
+  max-width: var(--max-width);
+  margin-bottom: calc(var(--line-height-computed) * 2);
+  font-family: var(--font-family-head);
+  text-transform: uppercase;
+}
+body > header .nav .menu {
+  display: table;
+  width: 100%;
+}
+body > header .nav .item {
+  display: table-cell;
+}
+body > header .nav a {
+  display: inline-block;
+  padding: 0 .75rem;
+  font-weight: var(--font-weight-head);
+}
+
+body > footer {
+  padding-top: var(--footer-spacing);
+}
+body > footer .nav .item {
+  display: inline-block;
+}
+body > footer .nav .item:after {
+  content: " · ";
+}
+body > footer .nav .item:last-child:after {
+  content: "";
+}
+body > footer .nav a {
+  display: inline-block;
+  padding: 0 .5rem;
+}
+
+
+/* Contents
+ * ------------------------- */
+
+.directory > header,
+.document > header {
+  text-align: center;
+}
+
+
+/* Directory
+ * ------------------------- */
+
+.directory {
+  margin: calc(var(--line-height-computed) * -4.25) auto 0;
+}
+
+.records {
+  column-gap: 0;
+  padding: 1rem;
+  margin: 0;
+  list-style: none;
+}
+@media (--screen-sm) {
+  .records {
+    column-count: var(--column-count-screen-sm);
+  }
+}
+@media (--screen-md) {
+  .records {
+    column-count: var(--column-count-screen-md);
+  }
+}
+@media (--screen-lg) {
+  .records {
+    column-count: var(--column-count-screen-lg);
+  }
+}
+@media (--screen-xl) {
+  .records {
+    column-count: var(--column-count-screen-xl);
+  }
+}
+
+.record {
+  display: inline-block;
+  margin: .25rem;
+}
+.record a {
+  display: block;
+  border: 0;
+}
+.record .document {
+  padding: 0 0 var(--line-height-computed);
+  margin: 0;
+  border-radius: var(--border-radius-small);
+}
+.record .document header {
+  padding: 0;
+}
+.record .document .title,
+.record .document .excerpt {
+  padding: .5rem 1rem;
+}
+.record .document .title {
+  margin: 0;
+  text-align: center;
+}
+.record .document .excerpt {
+  max-height: calc(var(--line-height-computed) * 4.5);
+  margin: 0;
+  overflow: hidden;
+}
+.record .document .excerpt:after {
+  position: absolute;
+  right: 0;
+  bottom: var(--line-height-computed);
+  left: 0;
+  height: var(--line-height-computed);
+  content: "";
+  background-image: linear-gradient(0deg, white 45%, color(white alpha(0%)));
+}
+.record.closed .document .excerpt {
+  max-height: calc(var(--line-height-computed) * 1.25);
+}
+
+
+/* Document
+ * ------------------------- */
+
+.document {
+  position: relative;
+  padding-bottom: var(--line-height-computed);
+  margin: calc(var(--header-spacing) * -1) auto calc(var(--footer-spacing) * -1);
+}
+.document .title {
+  margin: 0;
+  word-wrap: break-word;
+}
+.document .body > *:first-child {
+  margin-top: 0;
+}
+
+.document .title,
+.document .body,
+.document footer {
+  padding: calc(var(--line-height-computed) * 2) var(--body-spacing-screen-xs);
+}
+.document .fullwidth {
+  margin-right: calc(var(--body-spacing-screen-xs) * -1);
+  margin-left: calc(var(--body-spacing-screen-xs) * -1);
+}
+@media (--screen-sm) {
+  .document .title,
+  .document .body,
+  .document footer {
+    padding-right: var(--body-spacing-screen-sm);
+    padding-left: var(--body-spacing-screen-sm);
+  }
+  .document .fullwidth {
+    margin-right: calc(var(--body-spacing-screen-sm) * -1);
+    margin-left: calc(var(--body-spacing-screen-sm) * -1);
+  }
+}
+@media (--screen-md) {
+  .document .title,
+  .document .body,
+  .document footer {
+    padding-right: var(--body-spacing-screen-md);
+    padding-left: var(--body-spacing-screen-md);
+  }
+  .document .fullwidth {
+    margin-right: calc(var(--body-spacing-screen-md) * -1);
+    margin-left: calc(var(--body-spacing-screen-md) * -1);
+  }
+}
+@media (--screen-lg) {
+  .document .title,
+  .document .body,
+  .document footer {
+    padding-right: var(--body-spacing-screen-lg);
+    padding-left: var(--body-spacing-screen-lg);
+  }
+  .document .fullwidth {
+    margin-right: calc(var(--body-spacing-screen-lg) * -1);
+    margin-left: calc(var(--body-spacing-screen-lg) * -1);
+  }
+}
+@media (--screen-xl) {
+  .document .title,
+  .document .body,
+  .document footer {
+    padding-right: var(--body-spacing-screen-xl);
+    padding-left: var(--body-spacing-screen-xl);
+  }
+  .document .fullwidth {
+    margin-right: calc(var(--body-spacing-screen-xl) * -1);
+    margin-left: calc(var(--body-spacing-screen-xl) * -1);
+  }
+}
+
+.document footer {
+  padding-top: 0;
+  font-style: italic;
+}
+
+/* Limit its width only when it's the main content */
+body > .document {
+  max-width: var(--max-width);
+}
