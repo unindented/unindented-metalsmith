@@ -1,0 +1,69 @@
+/*
+ * Breakpoints
+ * -------------------------------------------------- */
+
+@custom-media --screen-xs screen and (min-width: 480px);
+@custom-media --screen-sm screen and (min-width: 768px);
+@custom-media --screen-md screen and (min-width: 992px);
+@custom-media --screen-lg screen and (min-width: 1200px);
+@custom-media --screen-xl screen and (min-width: 1600px);
+
+
+/*
+ * Variables
+ * -------------------------------------------------- */
+
+:root {
+
+  /*
+   * Typography
+   * ------------------------- */
+
+  --font-size-screen-xs:         100%;
+  --font-size-screen-sm:         125%;
+  --font-size-screen-md:         137.5%;
+  --font-size-screen-lg:         150%;
+  --font-size-screen-xl:         150%;
+
+  --font-size-base:              1rem;
+
+  --font-size-h1:                calc(var(--font-size-base) * 2.827);
+  --font-size-h2:                calc(var(--font-size-base) * 1.999);
+  --font-size-h3:                calc(var(--font-size-base) * 1.414);
+  --font-size-h4:                var(--font-size-base);
+  --font-size-h5:                var(--font-size-base);
+  --font-size-h6:                var(--font-size-base);
+
+  --font-size-code:              calc(var(--font-size-base) * 0.841);
+
+  --font-weight-body-normal:     400;
+  --font-weight-body-bold:       600;
+  --font-weight-code-normal:     400;
+  --font-weight-code-bold:       600;
+  --font-weight-head:            700;
+
+  --font-family-body:            "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-family-body-fallback:   "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-family-code:            "Source Code Pro", Monaco, Consolas, "Lucida Console", monospace;
+  --font-family-code-fallback:   Monaco, Consolas, "Lucida Console", monospace;
+  --font-family-head:            Dosis, "Arial Narrow", Arial, sans-serif;
+  --font-family-head-fallback:   "Arial Narrow", Arial, sans-serif;
+
+  --line-height-base:            1.5;
+  --line-height-computed:        calc(var(--font-size-base) * var(--line-height-base));
+
+
+  /*
+   * Components
+   * ------------------------- */
+
+  --border-radius-base:          0.4rem;
+  --border-radius-large:         0.6rem;
+  --border-radius-small:         0.3rem;
+
+  --border-width:                0.125rem;
+
+  --transition-function:         ease-in-out;
+  --transition-duration:         .25s;
+
+}
