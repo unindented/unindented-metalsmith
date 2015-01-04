@@ -1,0 +1,474 @@
+@import "_settings.css";
+
+/*
+ * Scaffolding
+ * -------------------------------------------------- */
+
+
+/* Box
+ * ------------------------- */
+
+html, input[type="search"] {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+/* Type
+ * ------------------------- */
+
+html {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-screen-xs);
+  line-height: var(--line-height-base);
+}
+@media (--screen-sm) {
+  html {
+    font-size: var(--font-size-screen-sm);
+  }
+}
+@media (--screen-md) {
+  html {
+    font-size: var(--font-size-screen-md);
+  }
+}
+@media (--screen-lg) {
+  html {
+    font-size: var(--font-size-screen-lg);
+  }
+}
+@media (--screen-xl) {
+  html {
+    font-size: var(--font-size-screen-xl);
+  }
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+html.wf-loading {
+  font-family: var(--font-family-body-fallback);
+}
+
+html.wf-loading h1,
+html.wf-loading h2,
+html.wf-loading h3,
+html.wf-loading h4,
+html.wf-loading h5,
+html.wf-loading h6 {
+  font-family: var(--font-family-head-fallback);
+}
+
+html.wf-loading code,
+html.wf-loading kbd,
+html.wf-loading pre,
+html.wf-loading samp {
+  font-family: var(--font-family-code-fallback);
+}
+
+
+/* Body
+ * ------------------------- */
+
+body {
+  cursor: default;
+}
+
+
+/* Headings
+ * ------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-head);
+  font-weight: var(--font-weight-head);
+  text-transform: uppercase;
+  letter-spacing: .075rem;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: var(--line-height-computed);
+  margin-bottom: calc(var(--line-height-computed) / 2);
+}
+h4,
+h5,
+h6 {
+  margin-top: calc(var(--line-height-computed) / 2);
+  margin-bottom: calc(var(--line-height-computed) / 2);
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+}
+h2 {
+  font-size: var(--font-size-h2);
+}
+h3 {
+  font-size: var(--font-size-h3);
+}
+h4 {
+  font-size: var(--font-size-h4);
+}
+h5 {
+  font-size: var(--font-size-h5);
+}
+h6 {
+  font-size: var(--font-size-h6);
+}
+
+
+/* Paragraphs
+ * ------------------------- */
+
+p {
+  margin: 0 0 calc(var(--line-height-computed) / 2);
+}
+
+
+/* Blockquotes
+ * ------------------------- */
+
+blockquote {
+  padding: calc(var(--line-height-computed) / 2) var(--line-height-computed);
+  margin: 0 0 var(--line-height-computed);
+}
+blockquote p:last-child,
+blockquote ul:last-child,
+blockquote ol:last-child {
+  margin-bottom: 0;
+}
+blockquote footer {
+  line-height: var(--line-height-base);
+}
+blockquote footer:before {
+  content: "\2014 \00A0";
+}
+
+
+/* Horizontal rules
+ * ------------------------- */
+
+hr {
+  height: var(--line-height-computed);
+  text-align: center;
+  border: 0;
+}
+hr:after {
+  letter-spacing: 1rem;
+  vertical-align: middle;
+  content: "***";
+}
+
+
+/* Lists
+ * ------------------------- */
+
+/* Unordered and ordered lists */
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: calc(var(--line-height-computed) / 2);
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+  margin-bottom: 0;
+}
+ul {
+  list-style-type: disc;
+}
+ol {
+  list-style-type: decimal;
+}
+
+/* Definition lists */
+dl {
+  margin-top: 0;
+  margin-bottom: var(--line-height-computed);
+}
+dt,
+dd {
+  line-height: var(--line-height-base);
+}
+dt {
+  font-weight: var(--font-weight-body-bold);
+}
+dd {
+  margin-left: var(--line-height-computed);
+}
+
+
+/* Media
+ * ------------------------- */
+
+canvas, figure, img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto calc(var(--line-height-computed) / 2);
+  overflow: hidden;
+  border: var(--border-width) solid;
+  border-radius: var(--border-radius-small);
+}
+
+canvas.interactive {
+  touch-action: none;
+}
+
+figure.equation {
+  margin: 0 0 calc(var(--line-height-computed) / 2);
+  overflow: auto;
+  border: var(--border-width) solid;
+  border-radius: var(--border-radius-small);
+}
+figure.fullwidth {
+  max-width: none;
+  border-right: 0;
+  border-left: 0;
+  border-radius: 0;
+}
+
+figure canvas,
+figure img {
+  margin: 0 auto;
+  border: 0;
+  border-radius: 0;
+}
+
+
+/* Table
+ * ------------------------- */
+
+table {
+  width: 100%;
+  margin: 0 0 calc(var(--line-height-computed) / 2);
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 0 .5rem;
+  font-weight: var(--font-weight-body-normal);
+  text-align: center;
+  white-space: nowrap;
+}
+thead {
+  border-bottom: var(--border-width) solid;
+}
+tfoot {
+  border-top: var(--border-width) solid;
+}
+thead th,
+tfoot td {
+  font-weight: var(--font-weight-body-bold);
+  line-height: calc(var(--line-height-computed) * 1.5);
+}
+
+
+/* Links
+ * ------------------------- */
+
+a {
+  text-decoration: none;
+  border-bottom: 1px dotted;
+}
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+
+/* Abbreviations
+ * ------------------------- */
+
+abbr[title],
+acronym[title],
+dfn[title] {
+  cursor: help;
+  border-bottom: 1px dotted;
+}
+
+a abbr[title],
+a acronym[title],
+a dfn[title] {
+  cursor: pointer;
+}
+
+
+/*
+ * Code
+ * ------------------------- */
+
+/* Inline and block code styles */
+code,
+kbd,
+pre,
+samp {
+  font-family: var(--font-family-code);
+}
+
+kbd {
+  padding: .25rem;
+  border: var(--border-width) solid;
+  border-radius: var(--border-radius-small);
+}
+
+/* Blocks of code */
+pre {
+  display: block;
+  padding: calc(var(--line-height-computed) / 2);
+  margin: 0 0 calc(var(--line-height-computed) / 2);
+  overflow: auto;
+  font-size: var(--font-size-code);
+  word-wrap: normal;
+  white-space: pre;
+  border: var(--border-width) solid;
+  border-radius: var(--border-radius-small);
+}
+
+
+/* Form
+ * ------------------------- */
+
+button,
+input,
+select,
+textarea {
+  display: block;
+  width: 100%;
+  min-height: calc(var(--line-height-computed) * 1.25);
+  padding: calc(var(--line-height-computed) / 8) calc(var(--line-height-computed) / 4);
+  border: var(--border-width) solid;
+  border-radius: var(--border-radius-small);
+}
+button {
+  display: inline-block;
+  width: auto;
+}
+textarea {
+  min-height: auto;
+}
+
+label {
+  display: block;
+  margin-top: calc(var(--line-height-computed) / 2);
+  font-weight: var(--font-weight-body-bold);
+}
+label abbr[title],
+label acronym[title],
+label dfn[title] {
+  border: 0;
+}
+
+.buttons {
+  margin: var(--line-height-computed) 0 calc(var(--line-height-computed) / 2);
+}
+
+
+/* Cloud
+ * ------------------------- */
+
+.cloud {
+  padding: 0;
+  font-family: var(--font-family-head);
+  font-weight: var(--font-weight-head);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .075rem;
+  list-style: none;
+}
+.cloud .item {
+  display: inline-block;
+  padding: 0 .5rem;
+}
+.cloud .s {
+  font-size: var(--font-size-h3);
+}
+.cloud .m {
+  font-size: var(--font-size-h2);
+}
+.cloud .l {
+  font-size: var(--font-size-h1);
+}
+.cloud a {
+  border: 0;
+}
+
+
+/* Pagination
+ * ------------------------- */
+
+.pagination {
+  padding: 0;
+  text-align: center;
+}
+.pagination .page {
+  display: inline-block;
+}
+.pagination a,
+.pagination span {
+  display: inline-block;
+  padding: calc(var(--line-height-computed) / 4) var(--line-height-computed);
+  margin: 0 .125rem .5rem .125rem;
+  border: var(--border-width) solid;
+  border-radius: var(--border-radius-base);
+}
+.pagination .first a:before,
+.pagination .prev a:before {
+  content: "\2190  ";
+}
+.pagination .next a:after,
+.pagination .last a:after {
+  content: "  \2192";
+}
+
+
+/* Misc
+ * ------------------------- */
+
+.overflow {
+  margin: 0 0 calc(var(--line-height-computed) / 2);
+  overflow: auto;
+  border: var(--border-width) solid;
+  border-radius: var(--border-radius-small);
+}
+.overflow > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Only display content to screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+/* Use in conjunction with .sr-only to only display content when it's focused */
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}
