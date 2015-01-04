@@ -1,0 +1,15 @@
+<script>
+  var border = '#cccccc';
+  var primary = '#4d6480';
+  var secondary = ['#4d7580', '#804d53', '#6d804d', '#4d5380', '#4d805f', '#804d7e'];
+
+  window.palette = {
+    border: border,
+    primary: primary,
+    secondary: secondary,
+
+    random: function () {
+      return secondary[Math.floor(Math.random() * secondary.length)];
+    }
+  };
+</script>

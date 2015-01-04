@@ -1,0 +1,147 @@
+@import "normalize.css/normalize.css";
+@import "_scaffolding.css";
+@import "_settings.css";
+
+/*
+ * Errors
+ * -------------------------------------------------- */
+
+:root {
+
+  --black:            hsl(0, 0%, 0%);
+  --white:            hsl(0, 0%, 100%);
+
+  --primary-color:    hsl(212, 40%, 50%);
+
+  --body-bg:          var(--white);
+  --text-color:       color(var(--primary-color) l(-30%));
+
+  --error-bg:         color(var(--primary-color) l(+40%));
+  --error-color:      color(var(--primary-color) l(+10%) s(-10%));
+
+  --border-color:     color(var(--primary-color) l(+30%) s(-10%));
+
+  --link-color:       color(var(--primary-color) s(+10%));
+  --link-hover-color: color(var(--link-color) l(+15%));
+
+  --max-width:        40rem;
+
+  --arrow-distance:   4rem;
+  --arrow-size:       1rem;
+  --border-size:      .35rem;
+
+}
+
+
+/* Base
+ * ------------------------- */
+
+body {
+  padding: 1rem 1rem 0;
+  color: var(--text-color);
+  background-color: var(--error-bg);
+}
+
+a {
+  color: var(--link-color);
+  transition-timing-function: var(--transition-function);
+  transition-duration: var(--transition-duration);
+  transition-property: color;
+}
+a:hover,
+a:focus {
+  color: var(--link-hover-color);
+}
+
+button,
+input,
+select,
+textarea {
+  background: transparent;
+}
+::placeholder {
+  opacity: .5;
+}
+
+::selection {
+  color: var(--body-bg);
+  background-color: var(--error-color);
+}
+
+
+/* Dialog
+ * ------------------------- */
+
+.dialog {
+  position: relative;
+  max-width: var(--max-width);
+  padding: 1rem;
+  margin: 0 auto;
+  background-color: var(--body-bg);
+  border: calc(var(--border-size) * .75) solid var(--error-color);
+  border-radius: var(--border-radius-large);
+}
+.dialog:before {
+  position: absolute;
+  right: var(--arrow-distance);
+  bottom: -var(--arrow-size);
+  display: block;
+  width: 0;
+  content: "";
+  border-color: var(--error-color) transparent;
+  border-style: solid;
+  border-width: var(--arrow-size) var(--arrow-size) 0;
+}
+.dialog:after {
+  position: absolute;
+  right: calc(var(--arrow-distance)+ var(--border-size));
+  bottom: calc((var(--arrow-size) - var(--border-size) - .05) * -1);
+  display: block;
+  width: 0;
+  content: "";
+  border-color: var(--body-bg) transparent;
+  border-style: solid;
+  border-width: calc(var(--arrow-size) - var(--border-size)) calc(var(--arrow-size) - var(--border-size)) 0;
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: var(--line-height-computed);
+  text-align: center;
+}
+
+form {
+  display: table;
+  width: 100%;
+}
+
+input {
+  display: table-cell;
+  width: 100%;
+  margin: 0;
+  border-color: var(--border-color);
+}
+@media (--screen-sm) {
+  input {
+    width: 67.5%;
+  }
+  input[type="button"],
+  input[type="reset"],
+  input[type="submit"] {
+    width: 30%;
+    margin-left: 2.5%;
+  }
+}
+
+
+/* Characters
+ * ------------------------- */
+
+.characters {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-top: var(--line-height-computed);
+  margin-bottom: 0;
+  border: 0;
+  opacity: .5;
+}

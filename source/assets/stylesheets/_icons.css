@@ -1,0 +1,17 @@
+@font-face {
+  font-family: Unindented;
+  font-style: normal;
+  font-weight: normal;
+
+  src: url("/assets/fonts/unindented.eot");
+  src: url("/assets/fonts/unindented.eot?#iefix") format("embedded-opentype"),
+       url("/assets/fonts/unindented.woff2") format("woff2"),
+       url("/assets/fonts/unindented.woff") format("woff"),
+       url("/assets/fonts/unindented.ttf") format("truetype"),
+       url("/assets/fonts/unindented.svg#unindented") format("svg");
+}
+
+.icon[data-icon]:before {
+  font: normal normal 1rem/1rem Unindented;
+  content: attr(data-icon);
+}
