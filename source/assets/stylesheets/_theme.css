@@ -1,0 +1,787 @@
+@import "_settings.css";
+
+/*
+ * Theme
+ * -------------------------------------------------- */
+
+:root {
+
+  --black:                       hsl(0, 0%, 0%);
+  --white:                       hsl(0, 0%, 100%);
+
+  --primary-color:               hsl(212, 40%, 50%);
+
+  --secondary-color-1:           hsl(192, 40%, 50%);
+  --secondary-color-2:           hsl(352, 40%, 50%);
+  --secondary-color-3:           hsl(82, 40%, 50%);
+  --secondary-color-4:           hsl(232, 40%, 50%);
+  --secondary-color-5:           hsl(142, 40%, 50%);
+  --secondary-color-6:           hsl(302, 40%, 50%);
+
+  /*
+   * Colors
+   * -------------------------------------------------- */
+
+  --body-bg:                     var(--white);
+  --text-color:                  color(var(--white) alpha(75%));
+  --head-color:                  var(--white);
+  --link-color:                  var(--white);
+  --link-hover-color:            color(var(--white) alpha(85%));
+  --link-alt-color:              color(var(--primary-color) l(-15%));
+  --link-alt-hover-color:        color(var(--link-alt-color) l(+15%));
+  --link-alt-disabled-color:     color(var(--link-alt-color) l(+15%) s(-20%));
+
+  --shadow-color:                color(black alpha(15%));
+
+  --document-bg-0:               color(var(--primary-color) l(+40%));
+  --document-color-0:            color(var(--primary-color) l(-7%));
+  --document-hover-color-0:      color(var(--primary-color) l(-5%));
+  --document-wrap-color-0:       color(var(--primary-color) l(-15%));
+  --document-text-color-0:       color(var(--primary-color) l(-30%));
+  --document-border-color-0:     color(var(--primary-color) l(+30%) s(-10%));
+  --document-soft-color-0:       color(var(--primary-color) l(+40%) s(-20%));
+  --document-link-color-0:       color(var(--primary-color) s(+10%));
+  --document-link-hover-color-0: color(var(--document-link-color-0) l(+15%));
+
+  --document-bg-1:               color(var(--secondary-color-1) l(+40%));
+  --document-color-1:            color(var(--secondary-color-1) l(-7%));
+  --document-hover-color-1:      color(var(--secondary-color-1) l(-5%));
+  --document-wrap-color-1:       color(var(--secondary-color-1) l(-15%));
+  --document-text-color-1:       color(var(--secondary-color-1) l(-30%));
+  --document-border-color-1:     color(var(--secondary-color-1) l(+30%) s(-10%));
+  --document-soft-color-1:       color(var(--secondary-color-1) l(+40%) s(-20%));
+  --document-link-color-1:       color(var(--secondary-color-1) s(+10%));
+  --document-link-hover-color-1: color(var(--document-link-color-1) l(+15%));
+
+  --document-bg-2:               color(var(--secondary-color-2) l(+40%));
+  --document-color-2:            color(var(--secondary-color-2) l(-7%));
+  --document-hover-color-2:      color(var(--secondary-color-2) l(-5%));
+  --document-wrap-color-2:       color(var(--secondary-color-2) l(-15%));
+  --document-text-color-2:       color(var(--secondary-color-2) l(-30%));
+  --document-border-color-2:     color(var(--secondary-color-2) l(+30%) s(-10%));
+  --document-soft-color-2:       color(var(--secondary-color-2) l(+40%) s(-20%));
+  --document-link-color-2:       color(var(--secondary-color-2) s(+10%));
+  --document-link-hover-color-2: color(var(--document-link-color-2) l(+15%));
+
+  --document-bg-3:               color(var(--secondary-color-3) l(+40%));
+  --document-color-3:            color(var(--secondary-color-3) l(-7%));
+  --document-hover-color-3:      color(var(--secondary-color-3) l(-5%));
+  --document-wrap-color-3:       color(var(--secondary-color-3) l(-15%));
+  --document-text-color-3:       color(var(--secondary-color-3) l(-30%));
+  --document-border-color-3:     color(var(--secondary-color-3) l(+30%) s(-10%));
+  --document-soft-color-3:       color(var(--secondary-color-3) l(+40%) s(-20%));
+  --document-link-color-3:       color(var(--secondary-color-3) s(+10%));
+  --document-link-hover-color-3: color(var(--document-link-color-3) l(+15%));
+
+  --document-bg-4:               color(var(--secondary-color-4) l(+40%));
+  --document-color-4:            color(var(--secondary-color-4) l(-7%));
+  --document-hover-color-4:      color(var(--secondary-color-4) l(-5%));
+  --document-wrap-color-4:       color(var(--secondary-color-4) l(-15%));
+  --document-text-color-4:       color(var(--secondary-color-4) l(-30%));
+  --document-border-color-4:     color(var(--secondary-color-4) l(+30%) s(-10%));
+  --document-soft-color-4:       color(var(--secondary-color-4) l(+40%) s(-20%));
+  --document-link-color-4:       color(var(--secondary-color-4) s(+10%));
+  --document-link-hover-color-4: color(var(--document-link-color-4) l(+15%));
+
+  --document-bg-5:               color(var(--secondary-color-5) l(+40%));
+  --document-color-5:            color(var(--secondary-color-5) l(-7%));
+  --document-hover-color-5:      color(var(--secondary-color-5) l(-5%));
+  --document-wrap-color-5:       color(var(--secondary-color-5) l(-15%));
+  --document-text-color-5:       color(var(--secondary-color-5) l(-30%));
+  --document-border-color-5:     color(var(--secondary-color-5) l(+30%) s(-10%));
+  --document-soft-color-5:       color(var(--secondary-color-5) l(+40%) s(-20%));
+  --document-link-color-5:       color(var(--secondary-color-5) s(+10%));
+  --document-link-hover-color-5: color(var(--document-link-color-5) l(+15%));
+
+  --document-bg-6:               color(var(--secondary-color-6) l(+40%));
+  --document-color-6:            color(var(--secondary-color-6) l(-7%));
+  --document-hover-color-6:      color(var(--secondary-color-6) l(-5%));
+  --document-wrap-color-6:       color(var(--secondary-color-6) l(-15%));
+  --document-text-color-6:       color(var(--secondary-color-6) l(-30%));
+  --document-border-color-6:     color(var(--secondary-color-6) l(+30%) s(-10%));
+  --document-soft-color-6:       color(var(--secondary-color-6) l(+40%) s(-20%));
+  --document-link-color-6:       color(var(--secondary-color-6) s(+10%));
+  --document-link-hover-color-6: color(var(--document-link-color-6) l(+15%));
+
+}
+
+
+/* Base
+ * ------------------------- */
+
+body {
+  color: var(--text-color);
+}
+
+a {
+  color: var(--link-color);
+  transition-timing-function: var(--transition-function);
+  transition-duration: var(--transition-duration);
+  transition-property: color;
+}
+a:hover,
+a:focus {
+  color: var(--link-hover-color);
+}
+
+a abbr[title],
+a acronym[title],
+a dfn[title] {
+  transition-timing-function: var(--transition-function);
+  transition-duration: var(--transition-duration);
+  transition-property: color;
+}
+
+a code {
+  transition-timing-function: var(--transition-function);
+  transition-duration: var(--transition-duration);
+  transition-property: color;
+}
+
+button,
+input,
+select,
+textarea {
+  background: transparent;
+}
+
+::placeholder {
+  opacity: .5;
+}
+
+.cloud a,
+.pagination a {
+  color: var(--link-alt-color);
+}
+.cloud a:hover,
+.cloud a:focus,
+.pagination a:hover,
+.pagination a:focus {
+  color: var(--link-alt-hover-color);
+}
+.pagination span {
+  color: var(--link-alt-disabled-color);
+}
+
+
+/* Highlight
+ * ------------------------- */
+
+.hljs-comment,
+.hljs-javadoc {
+  opacity: .5;
+}
+.hljs-cdata,
+.hljs-doctype,
+.hljs-keyword,
+.hljs-pi,
+.hljs-pragma,
+.hljs-preprocessor,
+.hljs-request,
+.hljs-shebang,
+.hljs-status,
+.hljs-subst {
+  font-weight: var(--font-weight-code-bold);
+}
+.hljs-string,
+.hljs-number,
+.hljs-hexcolor {
+  font-weight: var(--font-weight-code-bold);
+  opacity: .5;
+}
+
+
+/* Directory
+ * ------------------------- */
+
+.directory .title {
+  color: var(--head-color);
+}
+.directory .record {
+  background-color: transparent;
+}
+.directory .record .excerpt {
+  background-color: var(--body-bg);
+  transition-timing-function: var(--transition-function);
+  transition-duration: var(--transition-duration);
+  transition-property: color, max-height;
+}
+
+
+/* Document
+ * ------------------------- */
+
+.document {
+  border-radius: var(--border-radius-base);
+  box-shadow: 0 0 .25rem .125rem var(--shadow-color);
+  transition-timing-function: var(--transition-function);
+  transition-duration: var(--transition-duration);
+  transition-property: background-color, box-shadow;
+}
+.document .body,
+.document footer {
+  background-color: var(--body-bg);
+}
+.document .title {
+  color: var(--head-color);
+}
+
+a .document {
+  box-shadow: 0 0 .0625rem .0625rem var(--shadow-color);
+}
+a:hover .document,
+a:focus .document {
+  box-shadow: 0 .125rem .125rem .125rem var(--shadow-color);
+}
+
+
+/* Colorize
+ * ------------------------- */
+
+body {
+  background-color: var(--document-bg-0);
+}
+body > header,
+body > footer {
+  background-color: var(--document-wrap-color-0);
+}
+.document {
+  color: var(--document-text-color-0);
+  background-color: var(--document-color-0);
+}
+a:hover .document,
+a:focus .document {
+  background-color: var(--document-hover-color-0);
+}
+.document a {
+  color: var(--document-link-color-0);
+}
+.document a:hover,
+.document a:focus {
+  color: var(--document-link-hover-color-0);
+}
+.body h1,
+.body h2,
+.body h3,
+.body h4,
+.body h5,
+.body h6 {
+  color: var(--document-text-color-0);
+}
+.body hr {
+  color: var(--document-border-color-0);
+}
+.body code,
+.body a code {
+  color: var(--document-link-color-0);
+}
+.body a:hover code,
+.body a:focus code {
+  color: var(--document-link-hover-color-0);
+}
+.body pre code {
+  color: var(--document-text-color-0);
+  opacity: .75;
+}
+.body canvas,
+.body figure,
+.body img,
+.body kbd,
+.body pre,
+.body thead,
+.body tfoot,
+.body button,
+.body input,
+.body select,
+.body textarea,
+.body .equation,
+.body .fullwidth,
+.body .overflow {
+  border-color: var(--document-border-color-0);
+}
+.body button,
+.body input,
+.body label,
+.body select,
+.body textarea {
+  color: var(--document-color-0);
+}
+.body tbody tr:nth-child(2n+1) {
+  background-color: var(--document-soft-color-0);
+}
+.body mark,
+::selection {
+  color: var(--body-bg);
+  background-color: var(--document-color-0);
+}
+::placeholder {
+  color: var(--document-color-0);
+}
+
+.color-1 {
+  background-color: var(--document-bg-1);
+}
+.color-1 > header,
+.color-1 > footer {
+  background-color: var(--document-wrap-color-1);
+}
+.color-1 .document {
+  color: var(--document-text-color-1);
+  background-color: var(--document-color-1);
+}
+.color-1 a:hover .document,
+.color-1 a:focus .document {
+  background-color: var(--document-hover-color-1);
+}
+.color-1 .document a {
+  color: var(--document-link-color-1);
+}
+.color-1 .document a:hover,
+.color-1 .document a:focus {
+  color: var(--document-link-hover-color-1);
+}
+.color-1 .body h1,
+.color-1 .body h2,
+.color-1 .body h3,
+.color-1 .body h4,
+.color-1 .body h5,
+.color-1 .body h6 {
+  color: var(--document-text-color-1);
+}
+.color-1 .body hr {
+  color: var(--document-border-color-1);
+}
+.color-1 .body code,
+.color-1 .body a code {
+  color: var(--document-link-color-1);
+}
+.color-1 .body a:hover code,
+.color-1 .body a:focus code {
+  color: var(--document-link-hover-color-1);
+}
+.color-1 .body pre code {
+  color: var(--document-text-color-1);
+}
+.color-1 .body canvas,
+.color-1 .body figure,
+.color-1 .body img,
+.color-1 .body kbd,
+.color-1 .body pre,
+.color-1 .body thead,
+.color-1 .body tfoot,
+.color-1 .body button,
+.color-1 .body input,
+.color-1 .body select,
+.color-1 .body textarea,
+.color-1 .body .equation,
+.color-1 .body .fullwidth,
+.color-1 .body .overflow {
+  border-color: var(--document-border-color-1);
+}
+.color-1 .body button,
+.color-1 .body input,
+.color-1 .body label,
+.color-1 .body select,
+.color-1 .body textarea {
+  color: var(--document-color-1);
+}
+.color-1 .body tbody tr:nth-child(2n+1) {
+  background-color: var(--document-soft-color-1);
+}
+.color-1 .body mark,
+.color-1 ::selection {
+  background-color: var(--document-color-1);
+}
+.color-1 ::placeholder {
+  color: var(--document-color-1);
+}
+
+.color-2 {
+  background-color: var(--document-bg-2);
+}
+.color-2 > header,
+.color-2 > footer {
+  background-color: var(--document-wrap-color-2);
+}
+.color-2 .document {
+  color: var(--document-text-color-2);
+  background-color: var(--document-color-2);
+}
+.color-2 a:hover .document,
+.color-2 a:focus .document {
+  background-color: var(--document-hover-color-2);
+}
+.color-2 .document a {
+  color: var(--document-link-color-2);
+}
+.color-2 .document a:hover,
+.color-2 .document a:focus {
+  color: var(--document-link-hover-color-2);
+}
+.color-2 .body h1,
+.color-2 .body h2,
+.color-2 .body h3,
+.color-2 .body h4,
+.color-2 .body h5,
+.color-2 .body h6 {
+  color: var(--document-text-color-2);
+}
+.color-2 .body hr {
+  color: var(--document-border-color-2);
+}
+.color-2 .body code,
+.color-2 .body a code {
+  color: var(--document-link-color-2);
+}
+.color-2 .body a:hover code,
+.color-2 .body a:focus code {
+  color: var(--document-link-hover-color-2);
+}
+.color-2 .body pre code {
+  color: var(--document-text-color-2);
+}
+.color-2 .body canvas,
+.color-2 .body figure,
+.color-2 .body img,
+.color-2 .body kbd,
+.color-2 .body pre,
+.color-2 .body thead,
+.color-2 .body tfoot,
+.color-2 .body button,
+.color-2 .body input,
+.color-2 .body select,
+.color-2 .body textarea,
+.color-2 .body .equation,
+.color-2 .body .fullwidth,
+.color-2 .body .overflow {
+  border-color: var(--document-border-color-2);
+}
+.color-2 .body button,
+.color-2 .body input,
+.color-2 .body label,
+.color-2 .body select,
+.color-2 .body textarea {
+  color: var(--document-color-2);
+}
+.color-2 .body tbody tr:nth-child(2n+1) {
+  background-color: var(--document-soft-color-2);
+}
+.color-2 .body mark,
+.color-2 ::selection {
+  background-color: var(--document-color-2);
+}
+.color-2 ::placeholder {
+  color: var(--document-color-2);
+}
+
+.color-3 {
+  background-color: var(--document-bg-3);
+}
+.color-3 > header,
+.color-3 > footer {
+  background-color: var(--document-wrap-color-3);
+}
+.color-3 .document {
+  color: var(--document-text-color-3);
+  background-color: var(--document-color-3);
+}
+.color-3 a:hover .document,
+.color-3 a:focus .document {
+  background-color: var(--document-hover-color-3);
+}
+.color-3 .document a {
+  color: var(--document-link-color-3);
+}
+.color-3 .document a:hover,
+.color-3 .document a:focus {
+  color: var(--document-link-hover-color-3);
+}
+.color-3 .body h1,
+.color-3 .body h2,
+.color-3 .body h3,
+.color-3 .body h4,
+.color-3 .body h5,
+.color-3 .body h6 {
+  color: var(--document-text-color-3);
+}
+.color-3 .body hr {
+  color: var(--document-border-color-3);
+}
+.color-3 .body code,
+.color-3 .body a code {
+  color: var(--document-link-color-3);
+}
+.color-3 .body a:hover code,
+.color-3 .body a:focus code {
+  color: var(--document-link-hover-color-3);
+}
+.color-3 .body pre code {
+  color: var(--document-text-color-3);
+}
+.color-3 .body canvas,
+.color-3 .body figure,
+.color-3 .body img,
+.color-3 .body kbd,
+.color-3 .body pre,
+.color-3 .body thead,
+.color-3 .body tfoot,
+.color-3 .body button,
+.color-3 .body input,
+.color-3 .body select,
+.color-3 .body textarea,
+.color-3 .body .equation,
+.color-3 .body .fullwidth,
+.color-3 .body .overflow {
+  border-color: var(--document-border-color-3);
+}
+.color-3 .body button,
+.color-3 .body input,
+.color-3 .body label,
+.color-3 .body select,
+.color-3 .body textarea {
+  color: var(--document-color-3);
+}
+.color-3 .body tbody tr:nth-child(2n+1) {
+  background-color: var(--document-soft-color-3);
+}
+.color-3 .body mark,
+.color-3 ::selection {
+  background-color: var(--document-color-3);
+}
+.color-3 ::placeholder {
+  color: var(--document-color-3);
+}
+
+.color-4 {
+  background-color: var(--document-bg-4);
+}
+.color-4 > header,
+.color-4 > footer {
+  background-color: var(--document-wrap-color-4);
+}
+.color-4 .document {
+  color: var(--document-text-color-4);
+  background-color: var(--document-color-4);
+}
+.color-4 a:hover .document,
+.color-4 a:focus .document {
+  background-color: var(--document-hover-color-4);
+}
+.color-4 .document a {
+  color: var(--document-link-color-4);
+}
+.color-4 .document a:hover,
+.color-4 .document a:focus {
+  color: var(--document-link-hover-color-4);
+}
+.color-4 .body h1,
+.color-4 .body h2,
+.color-4 .body h3,
+.color-4 .body h4,
+.color-4 .body h5,
+.color-4 .body h6 {
+  color: var(--document-text-color-4);
+}
+.color-4 .body hr {
+  color: var(--document-border-color-4);
+}
+.color-4 .body code,
+.color-4 .body a code {
+  color: var(--document-link-color-4);
+}
+.color-4 .body a:hover code,
+.color-4 .body a:focus code {
+  color: var(--document-link-hover-color-4);
+}
+.color-4 .body pre code {
+  color: var(--document-text-color-4);
+}
+.color-4 .body canvas,
+.color-4 .body figure,
+.color-4 .body img,
+.color-4 .body kbd,
+.color-4 .body pre,
+.color-4 .body thead,
+.color-4 .body tfoot,
+.color-4 .body button,
+.color-4 .body input,
+.color-4 .body select,
+.color-4 .body textarea,
+.color-4 .body .equation,
+.color-4 .body .fullwidth,
+.color-4 .body .overflow {
+  border-color: var(--document-border-color-4);
+}
+.color-4 .body button,
+.color-4 .body input,
+.color-4 .body label,
+.color-4 .body select,
+.color-4 .body textarea {
+  color: var(--document-color-4);
+}
+.color-4 .body tbody tr:nth-child(2n+1) {
+  background-color: var(--document-soft-color-4);
+}
+.color-4 .body mark,
+.color-4 ::selection {
+  background-color: var(--document-color-4);
+}
+.color-4 ::placeholder {
+  color: var(--document-color-4);
+}
+
+.color-5 {
+  background-color: var(--document-bg-5);
+}
+.color-5 > header,
+.color-5 > footer {
+  background-color: var(--document-wrap-color-5);
+}
+.color-5 .document {
+  color: var(--document-text-color-5);
+  background-color: var(--document-color-5);
+}
+.color-5 a:hover .document,
+.color-5 a:focus .document {
+  background-color: var(--document-hover-color-5);
+}
+.color-5 .document a {
+  color: var(--document-link-color-5);
+}
+.color-5 .document a:hover,
+.color-5 .document a:focus {
+  color: var(--document-link-hover-color-5);
+}
+.color-5 .body h1,
+.color-5 .body h2,
+.color-5 .body h3,
+.color-5 .body h4,
+.color-5 .body h5,
+.color-5 .body h6 {
+  color: var(--document-text-color-5);
+}
+.color-5 .body hr {
+  color: var(--document-border-color-5);
+}
+.color-5 .body code,
+.color-5 .body a code {
+  color: var(--document-link-color-5);
+}
+.color-5 .body a:hover code,
+.color-5 .body a:focus code {
+  color: var(--document-link-hover-color-5);
+}
+.color-5 .body pre code {
+  color: var(--document-text-color-5);
+}
+.color-5 .body canvas,
+.color-5 .body figure,
+.color-5 .body img,
+.color-5 .body kbd,
+.color-5 .body pre,
+.color-5 .body thead,
+.color-5 .body tfoot,
+.color-5 .body button,
+.color-5 .body input,
+.color-5 .body select,
+.color-5 .body textarea,
+.color-5 .body .equation,
+.color-5 .body .fullwidth,
+.color-5 .body .overflow {
+  border-color: var(--document-border-color-5);
+}
+.color-5 .body button,
+.color-5 .body input,
+.color-5 .body label,
+.color-5 .body select,
+.color-5 .body textarea {
+  color: var(--document-color-5);
+}
+.color-5 .body tbody tr:nth-child(2n+1) {
+  background-color: var(--document-soft-color-5);
+}
+.color-5 .body mark,
+.color-5 ::selection {
+  background-color: var(--document-color-5);
+}
+.color-5 ::placeholder {
+  color: var(--document-color-5);
+}
+
+.color-6 {
+  background-color: var(--document-bg-6);
+}
+.color-6 > header,
+.color-6 > footer {
+  background-color: var(--document-wrap-color-6);
+}
+.color-6 .document {
+  color: var(--document-text-color-6);
+  background-color: var(--document-color-6);
+}
+.color-6 a:hover .document,
+.color-6 a:focus .document {
+  background-color: var(--document-hover-color-6);
+}
+.color-6 .document a {
+  color: var(--document-link-color-6);
+}
+.color-6 .document a:hover,
+.color-6 .document a:focus {
+  color: var(--document-link-hover-color-6);
+}
+.color-6 .body h1,
+.color-6 .body h2,
+.color-6 .body h3,
+.color-6 .body h4,
+.color-6 .body h5,
+.color-6 .body h6 {
+  color: var(--document-text-color-6);
+}
+.color-6 .body hr {
+  color: var(--document-border-color-6);
+}
+.color-6 .body code,
+.color-6 .body a code {
+  color: var(--document-link-color-6);
+}
+.color-6 .body a:hover code,
+.color-6 .body a:focus code {
+  color: var(--document-link-hover-color-6);
+}
+.color-6 .body pre code {
+  color: var(--document-text-color-6);
+}
+.color-6 .body canvas,
+.color-6 .body figure,
+.color-6 .body img,
+.color-6 .body kbd,
+.color-6 .body pre,
+.color-6 .body thead,
+.color-6 .body tfoot,
+.color-6 .body button,
+.color-6 .body input,
+.color-6 .body select,
+.color-6 .body textarea,
+.color-6 .body .equation,
+.color-6 .body .fullwidth,
+.color-6 .body .overflow {
+  border-color: var(--document-border-color-6);
+}
+.color-6 .body button,
+.color-6 .body input,
+.color-6 .body label,
+.color-6 .body select,
+.color-6 .body textarea {
+  color: var(--document-color-6);
+}
+.color-6 .body tbody tr:nth-child(2n+1) {
+  background-color: var(--document-soft-color-6);
+}
+.color-6 .body mark,
+.color-6 ::selection {
+  background-color: var(--document-color-6);
+}
+.color-6 ::placeholder {
+  color: var(--document-color-6);
+}
