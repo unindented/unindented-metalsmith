@@ -1,0 +1,19 @@
+{% macro item(link, text, icon) %}
+  <li class="item">
+    <a href="{{ link }}" title="{{ text }}">
+      <i class="icon" data-icon="{{ icon | safe }}" aria-hidden="true"></i>
+      <span class="text">{{ text }}</span>
+    </a>
+  </li>
+{% endmacro %}
+
+<ul class="menu">
+  {{ item('/',             'Home',      '&#xf102;') }}
+  {{ item('/articles/',    'Blog',      '&#xf103;') }}
+  {{ item('/experiments/', 'Lab',       '&#xf104;') }}
+  {{ item('/about/',       'About',     '&#xf105;') }}
+  {% if full %}
+  {{ item('/feed.atom',    'Subscribe', '&#xf106;') }}
+  {{ item('#top',          'Top',       '&#xf10a;') }}
+  {% endif %}
+</ul>

@@ -1,0 +1,40 @@
+{
+  "name":        "unindented-metalsmith",
+  "description": "My website, built using Metalsmith.",
+  "license":     "MIT",
+
+  "private": true,
+
+  "author": {
+    "name":  "Daniel Perez Alvarez",
+    "email": "unindented@gmail.com",
+    "url":   "http://unindented.org/"
+  },
+
+  "repository": {
+    "type": "git",
+    "url":  "git://github.com/unindented/unindented-metalsmith.git"
+  },
+
+  "scripts": {
+    "build":     "node index.js build",
+    "serve":     "node index.js serve",
+    "watch":     "node index.js watch",
+    "icons":     "node index.js icons",
+    "sync":      "CONFIG=sync node index.js build && CONFIG=sync node index.js sync",
+    "sync-prod": "CONFIG=sync-prod node index.js build && CONFIG=sync-prod node index.js sync"
+  },
+
+  "dependencies": {
+    "async":             "^1.4.2",
+    "babel":             "^5.8.21",
+    "babelify":          "^6.1.3",
+    "debug":             "^2.2.0",
+    "js-yaml":           "^3.3.1",
+    "lodash":            "^3.10.1",
+    "minimist":          "^1.1.3",
+    "normalize.css":     "^3.0.3",
+
+    "metalsmith-bundle": "^1.0.0"
+  }
+}

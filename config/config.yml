@@ -1,0 +1,278 @@
+defaults: &defaults
+  source: "./source/"
+  destination: "./build/"
+
+  metadata: &metadata
+    global:
+      url: "https://unindented.org"
+      email: "daniel@unindented.org"
+      twitter: "unindented"
+      github: "unindented"
+      title: "Unindented"
+      subtitle: "Home of Daniel Perez Alvarez"
+      author: "Daniel Perez Alvarez"
+
+      license:
+        text: "All content by Daniel Perez Alvarez unless otherwise noted. Some rights reserved."
+        url: "//creativecommons.org/licenses/by-sa/4.0/"
+
+    fixurl:
+      url: "//linkhelp.clients.google.com/tbproxy/lh/wm/fixurl.js"
+
+    mathjax:
+      url: "//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+      config:
+        messageStyle: "none"
+        tex2jax:
+          inlineMath: [["$", "$"]]
+          displayMath: [["$$", "$$"]]
+
+    tagman:
+      url_nojs: "//www.googletagmanager.com/ns.html"
+      url_js: "//www.googletagmanager.com/gtm.js"
+      id: "GTM-WFGVBN"
+
+    webfonts:
+      url: "//ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"
+      config:
+        google:
+          families:
+            - "Dosis:700"
+            - "Source Sans Pro:400,600,400italic,600italic"
+            - "Source Code Pro:400,600"
+
+  plugins: &plugins
+
+    ignore:
+      patterns:
+        - "**/_*"
+        - "assets/glyphs/**"
+        - "contents/**/.*"
+        - "contents/LICENSE"
+        - "contents/README.md"
+
+    path:
+      pattern: "contents/+(about|articles|experiments)/**"
+
+    extend:
+      documents:
+        pattern: "contents/+(articles|experiments)/**/index.md"
+        attributes:
+          template: "document.html"
+          extensions: []
+          date:
+            attribute: "path"
+            from: "^contents/(?:articles|experiments)/(\\d{4}-\\d{2}-\\d{2})-.+$"
+            to: "$1"
+      about:
+        pattern: "contents/about/**/index.md"
+        attributes:
+          template: "document.html"
+          extensions: []
+      errors:
+        pattern: "errors/*.md"
+        attributes:
+          template: "error.html"
+          extensions: []
+      htaccess:
+        pattern: ".htaccess"
+        attributes:
+          template: "htaccess.txt"
+
+    collections:
+      documents:
+        pattern: "contents/+(articles|experiments)/**/index.md"
+        sortBy: "date"
+        reverse: true
+        index: 6
+      articles:
+        pattern: "contents/articles/**/index.md"
+        sortBy: "date"
+        reverse: true
+      experiments:
+        pattern: "contents/experiments/**/index.md"
+        sortBy: "date"
+        reverse: true
+
+    directories:
+      documents:
+        path: "contents/index.html"
+        template: "directory.html"
+        collection: "documents"
+        contents: ""
+        max: 6
+      articles:
+        path: "contents/articles/index.html"
+        template: "directory.html"
+        collection: "articles"
+        title: "Articles"
+        contents: ""
+        paginate: 6
+      experiments:
+        path: "contents/experiments/index.html"
+        template: "directory.html"
+        collection: "experiments"
+        title: "Experiments"
+        contents: ""
+        paginate: 6
+      atom:
+        path: "contents/feed.atom"
+        template: "feed.atom"
+        collection: "documents"
+        contents: ""
+        max: 6
+      tile:
+        path: "contents/feed.tile"
+        template: "feed.tile"
+        collection: "documents"
+        contents: ""
+        max: 3
+
+    tags:
+      index:
+        path: "contents/tags/index.html"
+        template: "tags.html"
+        collection: "documents"
+        title: "Tags"
+        contents: ""
+      individual:
+        path: "contents/tags/$1/index.html"
+        template: "directory.html"
+        title: "Contents tagged with ‘$1’"
+        contents: ""
+        paginate: 6
+
+    paginate:
+      pattern: "**/index.html"
+
+    markdown:
+      pattern: "**/*.md"
+      preset: "default"
+      html: true
+      xhtmlOut: true
+      linkify: true
+      typographer: true
+
+    excerpt:
+      pattern: "contents/+(articles|experiments)/**/index.html"
+      selector: "p"
+      start: 0
+      end: 2
+
+    link:
+      documents:
+        pattern: "contents/+(articles|experiments)/**"
+        from: "^contents(/(?:articles|experiments)/)(\\d+/)?(?:(?:\\d{4}-\\d{2}-\\d{2})-([^/]+/))?(?:index\\.html|((?:[^.]+)\\.(?:.+)))$"
+        to: "$1$2$3$4"
+      sections:
+        pattern: "contents/+(about|tags)/**"
+        from: "^contents(/(?:(?:[^/]+)/)+)(?:index\\.html|((?:[^.]+)\\.(?:.+)))$"
+        to: "$1$2"
+      misc:
+        pattern: "contents/*.*"
+        from: "^contents(/.+)$"
+        to: "$1"
+
+    date:
+      pattern: "contents/feed.*"
+
+    template:
+      pattern: "**"
+      directory: "templates"
+      engine: "swig"
+
+    browserify:
+      pattern: ["**/*.js", "!**/vendor/**"]
+      transform:
+        - ["babelify", {"ignore": ["/lib/", "/vendor/"]}]
+
+    postcss:
+      pattern: "**/*.css"
+      import:
+        path:
+          - "source/assets/stylesheets"
+          - "node_modules"
+
+    minify:
+      pattern: "**/*.+(css|html|js)"
+
+    move:
+      pattern: "**"
+
+  sync: &sync
+    source: "./build/"
+    options:
+      - "--archive"
+      - "--compress"
+      - "--delete"
+      - "--verbose"
+
+  debug:
+    - "build"
+    - "sync"
+    - "glyphs"
+    - "icons"
+    - "serve"
+    - "watch"
+
+# BUILD ---------------------------------------------------------------#
+
+build:
+  <<: *defaults
+
+# SERVE ---------------------------------------------------------------#
+
+serve:
+  <<: *defaults
+
+  plugins:
+    <<: *plugins
+
+    minify:
+      pattern: "**/*.none"
+
+    serve:
+      online: false
+      port: 8000
+
+# WATCH ---------------------------------------------------------------#
+
+watch:
+  <<: *defaults
+
+  plugins:
+    <<: *plugins
+
+    minify:
+      pattern: "**/*.none"
+
+    watch:
+      source: "."
+      pattern: ["source/**", "templates/**"]
+      delay: 500
+
+    serve:
+      online: false
+      port: 8000
+
+# SYNC DEVELOPMENT ----------------------------------------------------#
+
+sync:
+  <<: *defaults
+
+  sync:
+    <<: *sync
+    destination: "unindented:/home/unindented/dev.unindented.org/"
+
+# SYNC PRODUCTION -----------------------------------------------------#
+
+sync-prod:
+  <<: *defaults
+
+  metadata:
+    <<: *metadata
+    secure: true
+
+  sync:
+    <<: *sync
+    destination: "unindented:/home/unindented/unindented.org/"

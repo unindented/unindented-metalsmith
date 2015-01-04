@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>
+      {% if title %}
+        {{ title }} | {{ global.title }}
+      {% else %}
+        {{ global.title }} | {{ global.subtitle }}
+      {% endif %}
+    </title>
+
+    <link href="/assets/stylesheets/application.css" rel="stylesheet" />
+
+    {% include 'partials/meta_feeds.html' %}
+
+    {% include 'partials/meta_humans.html' %}
+
+    {% include 'partials/meta_touchicons.html' %}
+    {% include 'partials/meta_favicons.html' %}
+
+    {% include 'partials/meta_msapplication.html' %}
+    {% include 'partials/meta_opengraph.html' %}
+    {% include 'partials/meta_twitter.html' %}
+
+    {% include 'partials/script_tagman.html' %}
+    {% include 'partials/script_webfonts.html' %}
+  </head>
+
+  <body class="{% if index %}color-{{ index }}{% endif %}" id="top">
+    {% include 'partials/noscript_tagman.html' %}
+
+    {% include 'partials/script_colors.html' %}
+
+    {% include 'partials/master_header.html' %}
+    {% block contents %}{% endblock contents %}
+    {% include 'partials/master_footer.html' %}
+
+    <script async="async" src="/assets/scripts/application.js"></script>
+
+    {% block scripts %}{% endblock scripts %}
+  </body>
+</html>
+
