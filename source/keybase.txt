@@ -1,0 +1,83 @@
+==================================================================
+https://keybase.io/unindented
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://unindented.org
+  * I am unindented (https://keybase.io/unindented) on keybase.
+  * I have a public key with fingerprint ADA1 BC8E B2F0 408A F8F2  D582 D36F 1EE0 2B39 6949
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "client": {
+            "name": "keybase.io node.js client",
+            "version": "0.7.3"
+        },
+        "key": {
+            "fingerprint": "ada1bc8eb2f0408af8f2d582d36f1ee02b396949",
+            "host": "keybase.io",
+            "key_id": "D36F1EE02B396949",
+            "uid": "2df2311d751a7639e657c134b1af4b00",
+            "username": "unindented"
+        },
+        "merkle_root": {
+            "ctime": 1418146293,
+            "hash": "c307c3dc3cec00c229784eedb30b8c174f900c2209efea0f3648201cd78a7723d4917e15c0f14363daa5eb51525d267b29b3cdaafc5ee14875963a5d5cf32826",
+            "seqno": 105793
+        },
+        "service": {
+            "hostname": "unindented.org",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1418146331,
+    "expire_in": 157680000,
+    "prev": "6cfe0fead40d3c4df65d78b3ac0c07f231d8fc00ad8c5ca2b4bfdeb24435eb68",
+    "seqno": 13,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG/MacGPG2 v2.0.22 (Darwin)
+Comment: GPGTools - https://gpgtools.org
+
+owFlUn1MVWUYv1wQBb8oZxKoyQn4A4W957znk+lEQtqlrPAjdKm3c973PXD0es/l
+3AtXJLCZkwFCrCCYK1YMQSOcCrgC3CjTRLR0XFhSmx9oliw39V5dmdk5zJqu96/3
+fd7f83ue3+956maG26LDhvWFlxdLmiNs6DfFtraCiS+lFB2XUOmlFHJpxO2zbm55
+G6HSqa2kRJG9JE3TF7l1TNK2eBc9xiyhionh1XS3iQJpQhqkypZYcCtZ1dz5xPAY
+msVFyVimFSQShVEBC0RZFVUGcyKDIa/ShABGgRIvsZJJWaB7fU9VpSY5nRo2o1mQ
+z6ZXrgRM5n/4oskPBqsMpGkscLQs8FAiPCcgGrIKLausAoAF9BLjsaQit+bGpgKC
+rY63EWOrizgNXZ+UjXyaBaJZWqRZnpGg2ZPsLTDTEAQCghhBRBAAiGEkQWQJwQoE
+iohogVWlyTCQiEpkoEKeFRlAIyyIsiAwELMSLRCaQ0ClWchDLMscUTiaYzjM8ILC
+SApEZlBFHCE0KwqcxEOZwxxSISMyvCnCSwrdutkc4AQJlllvo1hDxOrbMu5/+tJ0
+I99M8xi6T0e6y/wr8Pk83nRLt6/EY4K7KD9RnI95nIqZaE7uydHSJvRpTyCkl1Bk
+u0cziFOzEJzAi8A8ViFSbBbhkUqA6QFmAYaIxSrPmSYoUEYAAcEaFRZV00MZi4hD
+MqOwiorN7WBZaDrCi08oNe33yfkmp1fLd8u+IoNQZZX2+RG2sGhb5BS7tby26KiY
+fzeaccx+OP/K2n3rtHWrh6S/D+1uPbz8ix/zPvv2o33jjcGVDa4WR+94W2b7XjTt
+m93ftYRu2d77ubY68evgxjH0wtplezb9cb818+3g+bnZ+fCn4Jn1Wgg+rFLa65Qv
+k5q6SSh88SqOz988eCfQER014O/b7L8xrXxBxrGFwxevVeW5Nhmof2odZaw7enAs
+6UpnltexBr2YsOKrWFzxoDll7jHPLeVGZ1at/ei1iRl3Ts7KG1hwIjolfG/89JjL
+Lw+uzhipRqE1v6Ye+N41OrphRk3w44aE0tnzjxzi3M2BC4evnu27vfl6qP/Ahov3
+M9gfMgKP4o7PaUpOHHr9/dam2HgxN2WEfy31QmDp3B1gmn1O1s3qmK4jb5bvUqaU
+993et+zTu8bu5+fdq3t1CIys3zMvsd3h7+nOemf4l3o56t1z9q6KopuNM6fODPhf
+ee5Geu/ArkdKx/KyHNThHw2/F1NZEdz/xmlHT/Mlb2rd2Zz+iQ/8DwpPx/E7S9oK
+2+D+Uz2V06s27ixPRlt78blVB1df7f0wIrMqN+NOj+vZLWMJB1sC/dnxEZGf2Grm
+3a1tjE1YeqjrlrP+5Hr0VgX1eV5lUsOZi/KawtZL6RNy3DPZ5aET0smS878PREb8
+qR9I7hzckRDKGVOT4wY7O17qBqft9deDLQUrZh0/k02N11wv/muqezz2VCnOHS1p
+qgxs/wc=
+=SJ+S
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/unindented
+
+==================================================================

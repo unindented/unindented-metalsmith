@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>
+      {{ title }}
+    </title>
+
+    <link href="/assets/stylesheets/errors.css" rel="stylesheet" />
+
+    {% include 'partials/meta_feeds.html' %}
+
+    {% include 'partials/meta_humans.html' %}
+
+    {% include 'partials/meta_touchicons.html' %}
+    {% include 'partials/meta_favicons.html' %}
+
+    {% include 'partials/meta_msapplication.html' %}
+    {% include 'partials/meta_opengraph.html' %}
+    {% include 'partials/meta_twitter.html' %}
+
+    {% include 'partials/script_tagman.html' %}
+    {% include 'partials/script_webfonts.html' %}
+  </head>
+
+  <body class="error" id="top">
+    {% include 'partials/noscript_tagman.html' %}
+
+    <div class="dialog">
+      <h1 class="title">
+        {{ subtitle }}
+      </h1>
+      {{ contents | safe }}
+
+      {% if extensions.indexOf('FixUrl') >= 0 %}
+        {% include 'partials/script_fixurl.html' %}
+      {% endif %}
+    </div>
+
+    <img class="characters" alt="Who are these foxes?" src="/assets/images/foxes.svg" />
+  </body>
+</html>
