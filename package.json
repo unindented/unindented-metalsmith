@@ -30,7 +30,7 @@
     "lodash": "^4.0.0",
     "minimist": "^1.2.0",
     "normalize.css": "^3.0.3",
-    "metalsmith-bundle": "^2.0.0"
+    "metalsmith-bundle": "^2.0.6"
   },
   "devDependencies": {
     "babel-eslint": "^5.0.0",
